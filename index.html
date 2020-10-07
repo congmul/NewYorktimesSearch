@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap Link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- fontawesome Link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="./asset/style/style.css">
+</head>
+
+<body>
+
+    <div id="topBox">
+        <h1><i class="far fa-newspaper icon"></i>New York Times Search</h1>
+    </div>
+    <form class=“formBox”>
+        <div class="card">
+            <div class="card-header">
+                <b><i class="fas fa-calendar-alt icon"></i>Search Parameters</b>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="SearchTerm">Search Term:</label>
+                    <input type="text" class="form-control" id="searchTerm">
+                </div>
+                <div class="form-group">
+                    <label for="NumberRecoreds">Number of Records to Retrieve:</label>
+                    <input type="number" class="form-control" id="numberRecoreds" value="1" step="1">
+                </div>
+                <div class="form-group">
+                    <label for="StartYear ">Start Year (Optional):</label>
+                    <input type="year" class="form-control" id="startYear">
+                </div>
+                <div class="form-group">
+                    <label for="EndYear">End Year (Optional):</label>
+                    <input type="year" class="form-control" id="endYear">
+                </div>
+                <button type="search" class="btn" id="search"><i class="fas fa-search icon"></i>Search</button>
+                <button type="clear" class="btn" id="clear"><i class="fas fa-trash-alt icon"></i>Clear Results</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <b><i class="fas fa-calendar-alt icon"></i>Top Articles</b>
+            </div>
+            <div class="card-body">
+                <div id="displayArticles">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Jquery Link -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="asset/script/script.js"></script>
+</body>
+
+</html>
