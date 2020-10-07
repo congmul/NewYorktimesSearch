@@ -1,3 +1,3 @@
 # NewYorktimesSearch
 
-LINK : https://congmul.github.io/NewYorktimesSearch/.
+LINK : https://congmul.github.io/NewYorktimesSearch/?
