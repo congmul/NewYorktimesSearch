@@ -1,5 +1,6 @@
 $("#search").on("click", function (e) {
     e.preventDefault();
+    
     var searchTermEl = $("#searchTerm").val();
     var numberRecoredsEl = $("#numberRecoreds").val();
     var startYearEl = $("#startYear").val();
@@ -17,7 +18,8 @@ $("#search").on("click", function (e) {
     }
     
     displayArticlesEl = $("#displayArticles");
-    
+    displayArticlesEl.empty();
+
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -28,24 +30,42 @@ $("#search").on("click", function (e) {
         console.log(docsArr);
         console.log(docsArr[0].headline.main);
 
-        for (let i = 0; i < docsArr.length; i++){
+        for (let i = 0; i < numberRecoredsEl; i++){
             var headline = docsArr[i].headline.main;
             var webURL = docsArr[i].web_url;
             var pubDate = docsArr[i].pub_date;
             pubDate.slice(0,10);
             
-            var aEl = $("<a>");
             var divEl = $("<div>");
-            
-            aEl.attr("href", webURL);
-            aEl.attr("target", "_blank");
+            var aEl = $("<a>");
+            var pHeadlineEl = $("<p>");
+            var pByLineEl = $("<p>");
+            var pSectionNameEl = $("<p>");
+            var pDate = $("<p>");
+            var pArticle = $("<p>");
+
             divEl.attr("class", "articleLists");
 
-            var headline = docsArr[i].headline.main;
-            divEl.text(pubDate.slice(0,10)+" : "+headline);
+            aEl.text(webURL);
+            aEl.attr("href", webURL);
+            aEl.attr("target", "_blank");
+            
 
-            aEl.append(divEl);
-            displayArticlesEl.prepend(aEl);
+            var headline = docsArr[i].headline.main;
+            pHeadlineEl.text((parseInt(i)+ 1) +". " + headline);
+            pByLineEl.text(docsArr[i].byline.original);
+            pSectionNameEl.text("Section: " + docsArr[i].section_name);
+            pDate.text(pubDate.slice(0,10));
+            pArticle.text(docsArr[i].abstract);
+
+            divEl.append(pHeadlineEl);
+            divEl.append(pByLineEl);
+            divEl.append(pSectionNameEl);
+            divEl.append(pDate);
+            divEl.append(pArticle);
+            divEl.append(aEl);
+
+            displayArticlesEl.append(divEl);
         }
         
     });

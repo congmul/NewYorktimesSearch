@@ -27,36 +27,39 @@
 .endBox:last-child{
     margin-bottom: 0px;
 }
-#displayArticle{
-    border: 1px solid lightgray;
-    height: 50px; 
+#displayArticles{
+    
 }
 
 /* unvisited link */
 a:link {
-    color: black;
+    color: blue;
     text-decoration: none;
   }
   
   /* visited link */
   a:visited {
-    color: black;
+    color: blue;
     text-decoration: none;
   }
   
   /* mouse over link */
   a:hover {
-    color: black;
+    color: blue;
     text-decoration: none;
   }
   
   /* selected link */
   a:active {
-    color: black;
+    color: blue;
     text-decoration: none;
   }
 
   .articleLists{
       margin-bottom: 20px;
-      border-bottom: 1px solid lightgray;
+      padding: 10px;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      
+      /* border-bottom: 1px solid lightgray; */
   }
